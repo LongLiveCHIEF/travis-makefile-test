@@ -1,0 +1,23 @@
+sudo: required
+
+language: generic
+
+dist: bionic
+
+addons:
+  apt:
+    update: true
+    packages: 
+      - jq 
+      - make
+
+services:
+  - validate
+
+stages:
+  - build
+
+jobs:
+  include:
+    - stage: validate
+      script: make validate
