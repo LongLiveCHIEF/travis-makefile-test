@@ -4,21 +4,11 @@ language: generic
 
 dist: bionic
 
-addons:
-  apt:
-    update: true
-    packages: 
-      - jq 
-      - make
-
 services:
-  - validate
+  - docker
 
 stages:
-  - build
-
-before_script:
-  - sudo apt-cache policy make
+  - validate
 
 jobs:
   include:
