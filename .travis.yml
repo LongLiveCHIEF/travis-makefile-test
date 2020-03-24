@@ -17,6 +17,9 @@ services:
 stages:
   - build
 
+before_script:
+  - sudo apt-cache policy make
+
 jobs:
   include:
     - stage: validate
